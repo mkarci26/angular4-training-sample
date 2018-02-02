@@ -1,0 +1,20 @@
+ul{
+	list-style:none;
+	margin:10px;
+}
+li{
+    float:left;
+	
+	padding:10px;
+	background: #EEE;
+	border:#333 solid 1px;
+	border-radius:5px 5px 0px 0px;
+	cursor:pointer;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+li + li{
+    float:left;
+}

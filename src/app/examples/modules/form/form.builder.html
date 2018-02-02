@@ -1,0 +1,29 @@
+  <div class="col-md-6">
+    <h3>Angular 2 Form Builder Demo</h3>
+{{loginForm.value | json}}
+	<form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">username</label>
+        <input type="text" class="form-control" formControlName="username">
+        
+		<div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+          <div [hidden]="!username.hasError('required')">username is required</div>
+          <div [hidden]="!username.hasError('minlength')">Minimum length must be 5</div>
+        </div>
+		
+		
+      </div>
+	  <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        
+		<div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+          <div [hidden]="!password.hasError('required')">password is required</div>
+        </div>
+		
+      </div>
+      
+      <button type="submit" class="btn btn-success btn-block" [disabled]="!loginForm.valid">Submit</button>
+    </form>
+  </div>
+  

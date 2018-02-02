@@ -1,0 +1,34 @@
+Tabs redirect Component
+<ul>
+	<li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+	<li><a [routerLink]="['/dashboard/databinding']">Databinding</a></li>
+	<li><a [routerLink]="['/dashboard/directive']">Directive</a></li>
+	<li><a [routerLink]="['/customer']">Customer</a></li>
+</ul>
+<br/>
+<br/>
+<br/>
+Tabs redirect Child Component
+<ul>
+	<li><a (click)="selectTab('childA')">childA</a></li>
+	<li><a (click)="selectTab('childB')">childB</a></li>
+	<li><a (click)="selectTab('childC')">childC</a></li>
+</ul>
+<br/><br/><br/><br/><br/>
+Tabs redirect Child Component
+<ul>
+	<li *ngFor="let i of tabs">Tab {{i}}</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<button (click)="addTab();">addtab</button>
+<br/>
+<br/>
+<br/>
+<br/>
+<app-a [type]="tabStrings"></app-a>
+
+<app-child [type]="tab"></app-child>

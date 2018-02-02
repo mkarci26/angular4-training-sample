@@ -1,0 +1,11 @@
+customer page
+<br/>
+{{data | json}}
+<ul><li *ngFor="let x of data">
+	{{x | json}}
+	<div><input [(ngModel)]="x.name"/></div>
+</li></ul> 
+
+<button (click)="promise()">Promise data</button>
+<br/>
+{{promisedata}}

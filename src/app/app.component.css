@@ -1,0 +1,11 @@
+.main{
+	margin:0px auto;
+	font-family:verdana;
+	font-size:13px;
+	min-height:300px;
+}
+footer{
+	background:#EEE;
+	font-family:verdana;
+	font-size:10px;
+}
