@@ -1,0 +1,103 @@
+[
+  {
+	"product": {
+      "title": "Product",
+      "table": "product",
+	  "references": [
+		{
+		  "category_id": {
+			"table": "product_category",
+			"key": "id",
+			"value": "category"
+		  }
+		}
+	  ],
+      "fields": [
+        {
+          "key": "id",
+          "type": "number",
+          "label": "ID",
+          "controlType": null,
+		  "display": false, 
+          "required": null
+        },
+		{
+          "key": "name",
+          "type": "string",
+          "label": "Name",
+          "controlType": "textbox",
+		  "display": true, 
+          "required": true
+        },
+		{
+          "key": "hsn_code",
+          "type": "string",
+          "label": "HSN Code",
+          "controlType": "textbox",
+		  "display": true, 
+          "required": true
+        },
+		{
+          "key": "sku",
+          "type": "string",
+          "label": "Description/SKU",
+          "controlType": "textarea",
+		  "display": true, 
+          "required": true
+        },
+		{
+          "key": "category_id",
+          "type": "number",
+          "label": "Category",
+          "controlType": "dropdown",
+		  "display": false, 
+          "required": true,
+		  "options":[]
+        },
+	{
+          "key": "buying_info",
+          "type": "string",
+          "label": "Buying Info",
+          "controlType": "textarea",
+		  "display": false, 
+          "required": true
+        },
+		{
+          "key": "buying_cost",
+          "type": "string",
+          "label": "Buying Cost",
+          "controlType": "textbox",
+		  "display": true, 
+          "required": true
+        },
+		{
+          "key": "type",
+          "type": "string",
+          "label": "Type",
+          "controlType": "textbox",
+		  "display": true, 
+          "required": true
+        },
+		{
+          "key": "is_raw",
+          "type": "number",
+          "label": "Is Raw Material?",
+          "controlType": "radio",
+		  "display": false, 
+          "required": true,
+		  "options": [
+            {
+              "key": 0,
+              "value": "No"
+            },
+            {
+              "key": 1,
+              "value": "Yes"
+            }
+          ]
+        }
+	 ]
+	}
+  }
+  
+]

@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h4>Feed Settings</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-10 col-sm-12 ">
+		<h3 *ngIf="fConfig">{{title}} {{fConfig.title }} </h3>
+	</div>
+</div>
+
+<div class="row" *ngIf="feedModel && fConfig">
+	<div class="col-sm-12">
+		<form>
+			<div class="row">
+				<div class="col-md-10 col-sm-12 ">
+					<button [disabled]="loading" class="btn btn-info pull-right" (click)="back()">
+						Back to List
+					</button>
+				</div>
+			</div>
+			<div class="row">&nbsp;</div>
+			<div class="row" >
+				<div *ngFor="let field of fConfig.fields">
+				<div class="col-xs-12 col-sm-6 col-md-4" *ngIf="field.controlType">
+					<div class="form-group">
+						<label for="feedModel[field.key]"> {{ field.label }} </label>
+						
+						<dynamic-forms [formModel]="feedModel" [field]="field"></dynamic-forms>
+						
+					</div>
+				</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-10 col-sm-12 ">
+					<button [disabled]="loading" [ngClass]="{'loader-spinner': loading}" class="btn btn-primary" (click)="addOrEdit()">
+						{{title}} {{fConfig.title }}
+					</button>
+					<button [disabled]="loading" class="btn btn-info pull-right" (click)="back()">
+						Back to List
+					</button>
+				</div>
+			</div>
+		
+		</form>
+		
+		<div class="row">&nbsp;</div>
+</div>

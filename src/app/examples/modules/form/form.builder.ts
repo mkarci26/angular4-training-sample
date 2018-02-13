@@ -27,6 +27,6 @@ export class FormBuilderComponent {
   }
   
   ngOnInit(){
-	  this.username.value = "onload";
+	  
   }
 }

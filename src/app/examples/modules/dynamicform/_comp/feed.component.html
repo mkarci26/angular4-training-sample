@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h4>Feed Settings</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-10 col-sm-12 ">
+		<h3 *ngIf="fConfig"> {{fConfig.title }} </h3>
+	</div>
+	<div class="col-md-2 col-sm-12" *ngIf="fConfig">
+		<button type="button" class="btn btn-primary pull-right" (click)="addFeed()">
+			Add New
+		</button>
+	</div>
+</div>
+<div class="row" *ngIf="fConfig">
+	<div class="col-sm-12">
+		<table class="table table-bordered">
+		<thead>
+		  <tr>
+			<th *ngFor="let field of fConfig.fields" [ngClass]="{'hidden-xs hidden-sm hidden-md hidden-lg': !field.display}"> {{field.label }} </th>
+			<th> Actions </th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let row of rows">
+			<td *ngFor="let field of fConfig.fields" [ngClass]="{'hidden-xs hidden-sm hidden-md hidden-lg': !field.display}"> 
+				<span *ngIf="field.controlType == 'dropdown';else dropdownelse">
+					<span *ngFor="let option of field.options">  
+						<span *ngIf="option.key == row[field.key]"> {{option.value}}</span>
+					</span>
+				</span>
+				<ng-template #dropdownelse>
+					<span>  {{row[field.key]}} </span>
+				</ng-template>
+				
+			</td>
+			<td>
+				<button type="button" class="btn btn-info" (click)="editFeed(row['id'])">
+					Edit
+				</button>
+				<button type="button" class="btn btn-warning" (click)="deleteFeed(row['id'])">
+					Delete
+				</button>
+			</td>
+		  </tr>
+	
+		</tbody>
+	  </table>
+	</div>
+</div>

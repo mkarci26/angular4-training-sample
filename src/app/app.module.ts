@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { HttpModule } from "@angular/http";
+
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app-routing';
 
@@ -14,7 +16,7 @@ import { errorComponent } from "./examples/error.component";
     AppComponent, exComponent, errorComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(AppRoutes), BrowserAnimationsModule
+    BrowserModule, RouterModule.forRoot(AppRoutes), BrowserAnimationsModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
