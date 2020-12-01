@@ -24,9 +24,11 @@ export class TypeAheadComponent implements OnInit{
     }
 	
 	search: any;
+	searching: false;
+	
 	searchAPI($e){
 		console.log($e);
-		this.search = (text$: Observable<string>) =>
+		/*this.search = (text$: Observable<string>) =>
 			text$
 			.debounceTime(300)
 			.distinctUntilChanged()
@@ -36,6 +38,6 @@ export class TypeAheadComponent implements OnInit{
 					.do(() => this.searchFailed = false)
 					.catch(() => { this.searchFailed = true;  return of([]); })
 				)
-				.do((x) => this.searching = false)
+				.do((x) => this.searching = false)*/
 	}
 }
